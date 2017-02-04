@@ -25,11 +25,7 @@ def hello():
 
 @app.route("/users/<ObjectId:user_id>", methods=['GET'])
 def get_user(user_id):
-	result = ""
-	#for doc in mongo.db.reach.find_one({"_id":user_id}):
-	#	result += doc
-	#return result
-	return mongo.db.reach.find_one({"_id":user_id})
+	return str(mongo.db.reach.find_one_or_404({"_id":user_id}))
 
 @app.route("/users/<ObjectId:user_id>", methods=['POST'])
 def update_user(user_id):
@@ -43,11 +39,11 @@ def update_user(user_id):
 @app.route('/users/<ObjectId:user_id>/', methods=['DELETE'])
 def delete_user(user_id):
 	mongo.db.reach.delete_one( { "_id":user_id })
-	return "Document User"
+	return "Deleted User"
 
 
 
 ## MAIN
 if __name__ == "__main__":
-	app.run(host="0.0.0.0", port="80")
+	app.run()
 
