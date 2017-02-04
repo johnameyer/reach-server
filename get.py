@@ -1,4 +1,5 @@
 from flask import Flask
+from flash import jsonify
 from flask.ext.pymongo import PyMongo
 
 app = Flask(__name__)
@@ -8,8 +9,8 @@ mongo = PyMongo(app)
 def show(task_id):
     
     #users=mongo.db.reach
-    mongo.db.reach.find({"_id":task_id})
-    return "Get"
+    
+    return jsonify(mongo.db.reach.find({"_id":task_id}))
     
 if __name__ == "__main__":
     app.run()
