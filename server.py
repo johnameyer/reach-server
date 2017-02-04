@@ -1,7 +1,15 @@
+#!/usr/bin/python
+
 from flask import Flask
 from flask_pymongo import PyMongo
 import json
 
+app = Flask(__name__)
+mongo = PyMongo(app)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
 
 app = Flask('reach')
 mongo = PyMongo(app)
@@ -14,5 +22,6 @@ def hello(task_id):
 
     return "Document Deleted"
 
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port="80")
