@@ -1,5 +1,5 @@
 from flask import Flask
-from flash import jsonify
+from flask import jsonify
 from flask.ext.pymongo import PyMongo
 
 app = Flask(__name__)
