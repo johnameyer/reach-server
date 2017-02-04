@@ -45,5 +45,6 @@ def delete_user(user_id):
 
 ## MAIN
 if __name__ == "__main__":
-	app.run()
+	#app.run()	# use if running on localhost
+	app.run(host="0.0.0.0", port="80")
 
