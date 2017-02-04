@@ -25,7 +25,10 @@ def hello():
 
 @app.route("/users/<ObjectId:user_id>", methods=['GET'])
 def get_user(user_id):
-    return jsonify(mongo.db.reach.find({"_id":user_id}))
+	result = ""
+	for doc in mongo.db.reach.find({"_id":user_id}):
+		result += doc
+    return result
 
 
 @app.route("/users/<ObjectId:user_id>", methods=['POST'])
