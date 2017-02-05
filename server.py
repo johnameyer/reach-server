@@ -35,7 +35,9 @@ def get_contacts(user_id):
 	list = user_data["groups"]
 	print list
 	for user in list:
-		contacts.append(mongo.db.reach.find_one_or_404({"_id":user}))
+		print user
+		new_user = mongo.db.reach.find_one_or_404({"_id":user})
+		print new_user
 		print contacts
 	return str(contacts)
 
