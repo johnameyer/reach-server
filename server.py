@@ -36,7 +36,7 @@ def get_contacts(user_id):
 	print list
 	for user in list:
 		print user
-		new_user = mongo.db.reach.find_one({"_id":user})
+		new_user = mongo.db.reach.find_one({"_id":ObjectId(user)})
 		print new_user
 		print contacts
 	return str(contacts)
