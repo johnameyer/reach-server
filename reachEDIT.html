@@ -17,9 +17,36 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<style>
+  	<style>
 	
-    
+	body
+	{
+		
+		background: url("background.png") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 100vw;
+		height: 100vh;
+	}
+	div
+	{
+		background-color:none;
+	}
+	.container-fluid
+	{
+		background-color: #FFF;
+		border-radius: 10px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		/* bring your own prefixes */
+		transform: translate(-50%, -50%);
+		width:40%;
+	    padding:30px;
+	}
+	
 </style>
   </head>
   <body>
@@ -50,50 +77,35 @@
     
 </script>
 
-<nav class="navbar navbar-default">
+
   <div class="container-fluid">
-    <div class="navbar-header">
-     <a class="navbar-brand" href="#"><img src="iconreach.png" alt="HTML5 Icon" height="120" width="120"></a>
-    </div>
-    <ul class="nav navbar-nav">
-      
-    </ul>
-  </div>
-</nav>
-	<div class="container" >
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4 text-center">
+				<a class="navbar-brand" href="#"><img src="iconreach.png" alt="HTML5 Icon" height="120" width="120"></a>
+               </div>
+     
     
-    <hr>
-    <div class="row">
-        <div class="col-sm-11 col-sm-offset-1 hid" id="rows">
-            <div class="row">
-				<form action="demo_form.asp">
+  <form action="demo_form.asp">
                 <div class="col-sm-4 col-sm-offset-4 text-center">
+				
                  <center><h2>Name</h2> <input id="name" type="text" name="Name" value=""> </center>
                 </div>
 				<div class="col-sm-4 col-sm-offset-4 text-center" >
-                   <center><h2>email</h2> <input id="email" type="text" name="email" value=""></center>
+                <center><h2>Email</h2> <input id="email" type="text" name="email" value=""></center>
                 </div>
 				<div class="col-sm-4 col-sm-offset-4 text-center" >
-                   <center><h2>phone</h2> <input id="phone" type="text" name="phone" value=""></center>
-                </div>
-				<div class="col-sm-4 col-sm-offset-4 text-center" >
-                   <center><h2><h2></center>
+                 <center><h2>Phone</h2> <input id="phone" type="text" name="phone" value=""></center>
                 </div>
 				<div class="col-sm-4 col-sm-offset-4 text-center" >
                    <center><h2><h2></center>
                 </div>
-				
-            </div>
-        </div>
-    </div>
-    <hr>
-    
+				<div class="col-sm-4 col-sm-offset-4 text-center" >
+                   <center><h2><h2></center>
+                </div>
+	</form>
+  </div>
+</div>
 	
-	<footer>
-	 
-	 
-	
-	</footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

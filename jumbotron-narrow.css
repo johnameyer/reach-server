@@ -2,15 +2,10 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #1A263C;
+  
   color: #5394fc;
 }
-ul {
-		background-color: #1A263C;
-	}
-div{
-	background-color:#1A263C;
-}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -83,17 +78,7 @@ div{
   .jumbotron {
     border-bottom: 0;
   }
-  html { 
-    
-     background-color:#1A263C;
- }
- div{
-	background-color:#1A263C;
-}
  
- .body {
-     background-color:#1A263C; 
- }
     
 	
 	
