@@ -26,6 +26,12 @@ def hello():
 @app.route("/users/<ObjectId:user_id>", methods=['GET'])
 def get_user(user_id):
 	return str(mongo.db.reach.find_one_or_404({"_id":user_id}))
+	
+
+@app.route("/users/<ObjectId:user_id>/contacts", methods=['GET'])
+def get_contacts(user_id):
+	user_data = mongo.db.reach.find_one_or_404({"_id":user_id})
+	return user_data["groups"]
 
 @app.route("/users/<ObjectId:user_id>", methods=['POST'])
 def update_user(user_id):
