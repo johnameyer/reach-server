@@ -5,8 +5,7 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
-import bson.objectid
+from bson import ObjectId
 import json
 
 
@@ -35,13 +34,15 @@ def get_contacts(user_id):
 	user_data = mongo.db.reach.find_one_or_404({"_id":user_id})
 	contacts = []
 	list = user_data["groups"]
-	print list
+	print (list)
 	for user in list:
-		print user
-		new_user = mongo.db.reach.find_one({"_id":ObjectId(user)})
-		print new_user
-		print contacts
-	return str(contacts)
+		print (user)
+		new_user = mongo.db.reach.find_one({"_id":ObjectId(user)},{"_id":0})
+		print (new_user)
+		print (contacts)
+		new_user["_id"]=str(user)
+		contacts.append(new_user);
+	return jsonify(contacts)
 
 @app.route("/users/<ObjectId:user_id>", methods=['POST'])
 def update_user(user_id):
