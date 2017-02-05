@@ -2,8 +2,15 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #1A263C;
+  color:
 }
-
+ul {
+		background-color: #1A263C;
+	}
+div{
+	background-color:#1A263C;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -68,7 +75,7 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
-  /* Space out the masthead */
+  /* Space out the masthead */<h1>MY IDENTITY</h1>
   .header {
     margin-bottom: 30px;
   }
@@ -80,8 +87,14 @@ body {
     
      background-color:#1A263C;
  }
-
+ div{
+	background-color:#1A263C;
+}
+ 
  .body {
      background-color:#1A263C; 
  }
+    
+	
+	
 }
