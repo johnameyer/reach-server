@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <title>Identity</title>
+</head>
+ 
+<body>
+
+<script>
+	var xhr = new XMLHttpRequest();
+	var user = "58962c0bebaffa3e1d9b9ca9"
+	xhr.open('GET', "//104.196.36.172/users/"+user, false)
+	xhr.send();
+	
+	xhr.onreadystatechange = processRequest;
+	function processRequest(e) {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+        	var response = JSON.parse(xhr.responseText);
+			document.getElementById("name").innerHTML = hi;
+			document.getElementById("phone").innerHTML = response.phone;
+			document.getElementById("email").innerHTML = response.email;
+	    }
+	}
+</script>
+
+	<div>Name:</div><div id="name">val</div>
+	<div>Phone:</div><div id="phone">val</div>
+	<div>Email:</div><div id="email">val</div>
+	
+
+
+
+</body> 
+</html>
