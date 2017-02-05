@@ -31,9 +31,11 @@ def get_user(user_id):
 @app.route("/users/<ObjectId:user_id>/contacts", methods=['GET'])
 def get_contacts(user_id):
 	user_data = mongo.db.reach.find_one_or_404({"_id":user_id})
+	print user_data
 	contacts = []
 	for user in user_data["groups"]:
 		contacts.append(mongo.db.reach.find_one_or_404({"_id":user}))
+		print contacts
 	return str(contacts)
 
 @app.route("/users/<ObjectId:user_id>", methods=['POST'])
