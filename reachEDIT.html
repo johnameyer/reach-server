@@ -56,13 +56,17 @@
     <script src="js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   		<script type="text/javascript">
+		String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
   		$.ajax({"url":"http://104.196.36.172/users/589755674b247469a37d1ad2","success":function(data){
-  			data = JSON.parse(data.replace("u'","'"));
+  			data = JSON.parse(data.replaceAll("u'","'").replaceAll("'",'"'));
   			$("#name").text(data.name);
   			$("#address").text(data.address);
   			$("#phone").text(data.phone);
   			$("#email").text(data.email);
-  			console.log(data._id);
+  			//console.log(data._id);
   			if(false){//)
   				$("row > p").addAttribute("content-editable","true");
   			}
