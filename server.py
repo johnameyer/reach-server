@@ -36,7 +36,11 @@ def get_contacts(user_id):
 	print list
 	for user in list:
 		print user
-		new_user = mongo.db.reach.find_one_or_404({"_id":user})
+		try{
+			new_user = mongo.db.reach.find_one_or_404({"_id":user})
+		} catch(e){
+			print e
+		}
 		print new_user
 		print contacts
 	return str(contacts)
