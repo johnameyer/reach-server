@@ -57,7 +57,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   		<script type="text/javascript">
   		$.ajax({"url":"http://104.196.36.172/users/589755674b247469a37d1ad2","success":function(data){
-  			data = JSON.parse(data);
+  			data = JSON.parse(data.replace("u'","'"));
   			$("#name").text(data.name);
   			$("#address").text(data.address);
   			$("#phone").text(data.phone);
