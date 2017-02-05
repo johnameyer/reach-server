@@ -27,7 +27,7 @@ def hello():
 
 @app.route("/users/<ObjectId:user_id>", methods=['GET'])
 def get_user(user_id):
-	return str(mongo.db.reach.find_one_or_404({"_id":user_id}),{"_id": 0})
+	return str(mongo.db.reach.find_one_or_404({"_id":user_id},{"_id": 0,"groups":0}))
 	
 
 @app.route("/users/<ObjectId:user_id>/contacts", methods=['GET'])
