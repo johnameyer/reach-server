@@ -62,12 +62,12 @@
 };
   		$.ajax({"url":"http://104.196.36.172/users/589755674b247469a37d1ad2","success":function(data){
   			data = JSON.parse(data.replaceAll("u'","'").replaceAll("'",'"'));
-  			$("#name").text(data.name);
-  			$("#address").text(data.address);
-  			$("#phone").text(data.phone);
-  			$("#email").text(data.email);
+  			$("#name").val(data.name);
+  			//$("#address").val(data.address);
+  			$("#phone").val(data.phone);
+  			$("#email").val(data.email);
   			//console.log(data._id);
-  			if(false){//)
+  			if(false){
   				$("row > p").addAttribute("content-editable","true");
   			}
   		}});
