@@ -54,32 +54,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	<script>
-	var data ;
-	var name, email, phone;
-	text = JSON.stringify(m)
-	$.ajax({
-	dataType: "json",
-	url:,	
-	data: data,
-	success: function(data){
-	data = JSON.parse(data);
-	$.each(data,function(i,obj){
-	var div = $("#rows > div").clone();
-	div.find("#name").html(obj.name);
-	div.find("#email").html(obj.email);
-	div.find("#phone").html(obj.phone);
-	$("#rows").append(div);
-	div.show();
-	});
-	name);
-	$("#name").html(data.name);
-	$("#name").html(data.name);
-	}
-	})
-  })
-    
-</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  		<script type="text/javascript">
+  		$.ajax({"url":"http://104.196.36.172/users/589755674b247469a37d1ad2","success":function(data){
+  			data = JSON.parse(data);
+  			$("#name").text(data.name);
+  			$("#address").text(data.address);
+  			$("#phone").text(data.phone);
+  			$("#email").text(data.email);
+  			console.log(data._id);
+  			if(false){//)
+  				$("row > p").addAttribute("content-editable","true");
+  			}
+  		}});
+ 	</script>
 
 
   <div class="container-fluid">
