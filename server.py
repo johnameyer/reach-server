@@ -6,6 +6,7 @@ from flask import jsonify
 from flask import request
 from flask_pymongo import PyMongo
 from bson import ObjectId
+from flask import send_from_directory
 import json
 
 
@@ -20,8 +21,8 @@ app.config['MONGO_URI'] = 'mongodb://localhost:27017/reach'
 
 ## Routing Functions
 @app.route("/")
-def hello():
-	return "Hello World!"
+def hello():	
+	return send_from_directory('/home/wmarkley/reach-me','index.html')
     
 
 @app.route("/users/<ObjectId:user_id>", methods=['GET'])
@@ -58,6 +59,10 @@ def delete_user(user_id):
 	mongo.db.reach.delete_one( { "_id":user_id })
 	return "Deleted User"
 
+
+@app.route('/<path:path>')
+def serve(path):
+        return send_from_directory('/home/wmarkley/reach-me', path)
 
 
 ## MAIN
