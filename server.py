@@ -35,11 +35,15 @@ def get_contacts(user_id):
 	user_data = mongo.db.reach.find_one_or_404({"_id":user_id})
 	contacts = []
 	list = user_data["groups"]
+	print (list)
 	for user in list:
+		print (user)
 		new_user = mongo.db.reach.find_one({"_id":ObjectId(user)},{"_id":0})
-		new_user["_id"]=str(user)
+		print (new_user)
+		print (contacts)
+		#new_user["_id"]=str(user)
 		contacts.append(new_user);
-	return jsonify(contacts)
+	return str(contacts)
 
 @app.route("/users/<ObjectId:user_id>", methods=['POST'])
 def update_user(user_id):
