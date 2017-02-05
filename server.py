@@ -38,8 +38,8 @@ def get_contacts(user_id):
 		print user
 		try:
 			new_user = mongo.db.reach.find_one_or_404({"_id":user})
-		except(e):
-			print e
+		except(...):
+			print "error"
 		print new_user
 		print contacts
 	return str(contacts)
